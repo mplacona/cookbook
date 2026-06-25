@@ -209,6 +209,44 @@ def sentiment_donut(pos: int, neg: int, neutral: int) -> go.Figure:
     return fig
 
 
+def sentiment_strength_bar(pos: int, neg: int) -> go.Figure:
+    total = pos + neg
+    if not total:
+        return None
+    pct_pos = pos / total * 100
+    pct_neg = neg / total * 100
+    fig = go.Figure()
+    fig.add_trace(go.Bar(
+        x=[pct_pos], y=[""],
+        orientation="h",
+        marker_color=SENTIMENT_COLORS["positive"],
+        marker_line_width=0,
+        name=f"Positive ({pos})",
+    ))
+    fig.add_trace(go.Bar(
+        x=[pct_neg], y=[""],
+        orientation="h",
+        marker_color=SENTIMENT_COLORS["negative"],
+        marker_line_width=0,
+        name=f"Negative ({neg})",
+    ))
+    fig.update_layout(
+        barmode="stack",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        height=48,
+        margin=dict(t=0, b=0, l=0, r=0),
+        showlegend=True,
+        legend=dict(
+            orientation="h", x=0.5, xanchor="center", y=2.2,
+            font=dict(color="#94a3b8", size=12),
+        ),
+        xaxis=dict(visible=False, range=[0, 100]),
+        yaxis=dict(visible=False),
+    )
+    return fig
+
+
 def source_bar(source_breakdown: list) -> go.Figure:
     if not source_breakdown:
         return None
@@ -291,11 +329,6 @@ with st.sidebar:
     normalized_path = run_dir / "normalized_results.json"
     normalized = load_json(normalized_path) if normalized_path.exists() else report.get("representative_examples", [])
 
-    st.markdown("---")
-    st.markdown("**Run a fresh collection**")
-    st.code("python3 collect.py --config config/mentiondrop_config.json")
-    st.code("python3 collect.py --dry-run")
-    st.markdown(f"`{run_dir}`")
 
 # ---- Header ----
 summary = report.get("executive_summary", {})
@@ -336,6 +369,30 @@ for col, (label, value, sub) in zip([c1, c2, c3, c4, c5], cards):
     col.markdown(metric_card(label, value, sub), unsafe_allow_html=True)
 
 st.markdown("<div style='height:1rem'></div>", unsafe_allow_html=True)
+
+# ---- Sentiment strength ----
+if pos + neg > 0:
+    winner = "Positive" if pos >= neg else "Negative"
+    win_count = max(pos, neg)
+    win_pct = round(win_count / (pos + neg) * 100)
+    win_color = SENTIMENT_COLORS.get(winner.lower(), "#94a3b8")
+    col_verdict, col_bar = st.columns([1, 3])
+    with col_verdict:
+        st.markdown(
+            f"<div style='text-align:center;padding:0.4rem 0 0.8rem;'>"
+            f"<div style='font-size:0.7rem;color:#64748b;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.25rem;'>Stronger signal</div>"
+            f"<div style='font-size:1.9rem;font-weight:800;color:{win_color};line-height:1.1;'>{winner}</div>"
+            f"<div style='font-size:0.8rem;color:{win_color};margin-top:0.2rem;'>{win_pct}% of pos+neg</div>"
+            f"</div>",
+            unsafe_allow_html=True,
+        )
+    with col_bar:
+        fig_vs = sentiment_strength_bar(pos, neg)
+        if fig_vs:
+            st.markdown("<div style='height:0.5rem'></div>", unsafe_allow_html=True)
+            st.plotly_chart(fig_vs, use_container_width=True, config={"displayModeBar": False})
+
+st.markdown("<div style='height:0.5rem'></div>", unsafe_allow_html=True)
 
 # ---- Summary + donut ----
 left, right = st.columns([3, 2])
