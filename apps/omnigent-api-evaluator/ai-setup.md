@@ -143,7 +143,7 @@ python3.12 -m venv .venv && .venv/bin/pip install pytest
 Then, from that repo:
 
 ```bash
-<PATH TO COOKBOOK>/.venv/bin/omnigent run <PATH TO COOKBOOK>/agents/build
+<PATH TO COOKBOOK>/.venv/bin/omnigent run <PATH TO COOKBOOK>/agents/implement
 ```
 
 > Implement a minimal OpenCage geocoding client in geo/client.py with a geocode(query) function,

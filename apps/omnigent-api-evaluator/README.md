@@ -103,8 +103,9 @@ python -c "from omnigent.tools.builtins import nimble_research, nimble_extract; 
 ## Gotchas worth knowing before you start
 
 - **`claude-sdk` and `claude-native` authenticate differently.** `claude-sdk` needs a funded
-  Anthropic API key; `claude-native` runs off the Claude Code subscription. The shipped example
-  agents use `claude-sdk` — switch them if your key isn't funded.
+  Anthropic API key; `claude-native` runs off the Claude Code subscription. The agents here ship
+  on `claude-native` for that reason, so an unfunded Anthropic key is fine. If you switch one to
+  `claude-sdk`, it will need a funded key.
 - **Allow-list the MCP tools.** `claude-native` *is* Claude Code, so sub-agent dispatch hits its
   permission prompt. In the UI you approve it; unattended it fails as "blocked by a permission
   hook".
@@ -131,6 +132,22 @@ python -c "from omnigent.tools.builtins import nimble_research, nimble_extract; 
   than rejected. Neither mistake raises an error, so after your first run check `omnigent usage`
   to confirm which model actually billed.
 
+## Two things to know before you run it
+
+**The agents run an unsandboxed shell.** Every agent here declares `os_env` with
+`sandbox: type: none`, inherited from Omnigent's own shipped examples. That registers filesystem
+read/write/edit plus a shell in the working directory, so the blast radius is real — and these
+agents read web-derived content, which is exactly the input you would not want driving a shell.
+A `blast_radius` guardrail denies the catastrophic set (force-push, `rm -rf /`, hard reset to a
+remote ref), but nothing narrower. Run them in a scratch directory or a container, not in a repo
+you care about, and tighten `sandbox` if you adapt this for anything beyond a demo.
+
+**The bundled evidence file has gaps, on purpose.** In `data/evidence_full.json`, some OpenCage
+fields come back with no citations and `cited: false`. That is a real research result, not a
+placeholder, and it is what the strike rule is for: Act 2 refuses to decide on those fields and
+says so. It does mean the skip-Act-1 fast path starts from incomplete licensing facts for one
+candidate. Run Act 1 yourself for a current, complete set.
+
 ## Cost
 
 Measured with `omnigent usage`, which reports best-effort estimates.
@@ -151,7 +168,7 @@ and prints the URL). Each act hands the next one a file.
 ```bash
 omnigent run ./agents/evidence-builder   # Act 1 — builds the cited evidence base
 omnigent run ./agents/decide             # Act 2 — two vendors argue over it
-omnigent run ./agents/build              # Act 3 — implement + cross-vendor review
+omnigent run ./agents/implement              # Act 3 — implement + cross-vendor review
 ```
 
 **Give each agent an absolute path** to the evidence file in your first message — agents do not
