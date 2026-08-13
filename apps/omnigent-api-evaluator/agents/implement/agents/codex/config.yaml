@@ -9,7 +9,7 @@ executor:
     # YOLO: headless workers can't answer approval prompts, so run Codex
     # with full bypass. The server translates this into
     # ``--dangerously-bypass-approvals-and-sandbox`` (native sub-agents only).
-    yolo: true
+    yolo: false
 
 prompt: |
   You are Codex, a coding sub-agent dispatched by the polly

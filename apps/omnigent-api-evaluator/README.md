@@ -134,27 +134,19 @@ python -c "from omnigent.tools.builtins import nimble_research, nimble_extract; 
 
 ## Two things to know before you run it
 
-**The agents run an unsandboxed shell.** Every agent here declares `os_env` with
-`sandbox: type: none`, inherited from Omnigent's own shipped examples. That registers filesystem
-read/write/edit plus a shell in the working directory, so the blast radius is real — and these
-agents read web-derived content, which is exactly the input you would not want driving a shell.
-A `blast_radius` guardrail denies the catastrophic set (force-push, `rm -rf /`, hard reset to a
-remote ref), but nothing narrower. Run them in a scratch directory or a container, not in a repo
-you care about, and tighten `sandbox` if you adapt this for anything beyond a demo.
+**Every agent runs an unsandboxed shell.** All of them declare `os_env` with
+`sandbox: type: none`, which registers filesystem read/write/edit plus a shell in the working
+directory. These agents read web-derived content, so run them in a scratch directory rather than
+a repo you care about.
 
-**The Act 3 workers run with approvals bypassed.** This is inherited from Omnigent's shipped
-Polly example and it is worth knowing exactly what it means before you point this at a real repo:
+**Act 3 asks before it acts.** The workers run with approvals on: the codex worker has
+`yolo: false` and the claude_code worker `permission_mode: ask`, so tool calls that touch the
+filesystem or shell prompt you first. Approve them in the Omnigent UI as they appear.
 
-- `agents/implement/agents/codex/config.yaml` sets `yolo: true`, which becomes
-  `--dangerously-bypass-approvals-and-sandbox`. That worker executes tool calls without asking.
-- `agents/implement/agents/claude_code/config.yaml` sets `permission_mode: auto`, which removes
-  the interactive approval prompt for filesystem and shell tools.
-- Both also run `sandbox: type: none`, so there is no OS boundary underneath either.
-
-Together that is an agent writing and executing code in your working directory with no approval
-step. It is what makes an unattended demo run smoothly, and it is not what you want pointed at a
-repo you care about. Run Act 3 in a scratch repo. If you adapt this for real work, set
-`yolo: false`, drop `permission_mode: auto`, and give `os_env.sandbox` a real type.
+Both workers still run `sandbox: type: none`, inherited from Omnigent's shipped Polly example,
+so there is no OS boundary underneath the approval prompt. A `blast_radius` guardrail denies the
+catastrophic set (force-push, `rm -rf /`, hard reset to a remote ref) and nothing narrower. Run
+Act 3 in a scratch repo, and give `os_env.sandbox` a real type if you adapt this for real work.
 
 **The bundled evidence file has gaps, on purpose.** In `data/evidence_full.json`, some OpenCage
 fields come back with no citations and `cited: false`. That is a real research result, not a

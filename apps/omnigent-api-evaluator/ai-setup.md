@@ -155,7 +155,9 @@ One worktree and branch per task. The implementer drives to green, then a **diff
 model reviews the diff — given only the diff and the contract, never the implementer's transcript.
 Blocking issues become fixes on the same branch. It never merges; the branch is the deliverable.
 
-Takes 5–9 minutes.
+Takes 5–9 minutes. **Approval prompts will appear** — the workers run with approvals on
+(`yolo: false`, `permission_mode: ask`), so file writes and shell commands ask first. Approve them
+in the Omnigent UI as they come up, or the act waits.
 
 ---
 
