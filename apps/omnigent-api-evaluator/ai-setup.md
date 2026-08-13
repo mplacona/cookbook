@@ -104,8 +104,8 @@ Each returns a schema-conforming answer plus per-field citations and confidence.
 since uncited claims are struck in Act 2, that silently removes it from the comparison and changes
 the answer. `high` for anything you act on.
 
-A pre-built six-candidate evidence file ships in `data/evidence_full.json`. Copy it over
-`data/evidence.json` to skip straight to Act 2.
+A pre-built six-candidate evidence file ships in `data/evidence_full.json`. Copy it to
+`data/evidence.json` to skip straight to Act 2 without waiting for the research runs.
 
 ---
 
@@ -168,7 +168,7 @@ Takes 5–9 minutes.
   stops resolving, this is why.
 - **Your own Claude Code plugins can shadow these tools.** The `claude-native` harness *is* Claude
   Code and loads your plugins; if one exposes similar tools the agent may use those instead,
-  silently. `.claude/settings.local.json` denies the known overlaps.
+  silently. `.claude/settings.json` denies the known overlaps.
 - **Pinning a model? Placement matters.** `model:` under `executor.config` — next to `harness`,
   the obvious spot — is silently ignored and you keep paying for the default. It must be
   `executor.model`. A wrong model *id* is also accepted verbatim. Neither raises an error, so

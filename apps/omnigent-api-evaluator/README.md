@@ -123,7 +123,7 @@ python -c "from omnigent.tools.builtins import nimble_research, nimble_extract; 
 - **Your own Claude Code plugins can shadow this cookbook's tools.** The `claude-native` harness
   *is* Claude Code, so it loads whatever plugins you have installed. If one of them exposes
   similar tools, the agent may use those instead of the builtins declared in the agent config —
-  silently. The bundled `.claude/settings.local.json` denies the tools known to overlap; if an act
+  silently. The bundled `.claude/settings.json` denies the tools known to overlap; if an act
   behaves oddly, check which tools it actually called.
 - **Pinning a model? Put it in the right place.** `model:` under `executor.config` — right beside
   `harness`, the obvious spot — is silently ignored, and you keep paying for the default. It must
@@ -158,7 +158,7 @@ omnigent run ./agents/build              # Act 3 — implement + cross-vendor re
 resolve relative paths reliably. For example: *"Read /abs/path/data/evidence.json. We geocode ~50k
 addresses a month and must cache results 30 days. Which API?"*
 
-To skip the wait, copy the bundled `data/evidence_full.json` over `data/evidence.json` and start
+To skip the wait, copy the bundled `data/evidence_full.json` to `data/evidence.json` and start
 at Act 2.
 
 ## Swapping the domain
