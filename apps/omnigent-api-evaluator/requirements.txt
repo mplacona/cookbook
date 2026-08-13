@@ -1,0 +1,8 @@
+# The connector. The [nimble] extra is required for nimble_research;
+# web_search and nimble_extract work without it.
+#
+#   uv pip install -r requirements.txt
+#   pip install --pre -r requirements.txt     # --pre is required, see README
+#
+# Requires Python 3.12+.
+omnigent[nimble]>=0.9.0

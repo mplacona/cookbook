@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Omnigent / Polly working state
+.worktrees/
+.polly/
+.omnigent/
+
+# Raw run payloads — regenerate rather than commit
+data/raw/
+data/raw_high/
+
+# Harness scratch
+.codex-tmp/
