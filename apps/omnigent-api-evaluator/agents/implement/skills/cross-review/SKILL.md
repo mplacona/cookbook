@@ -11,7 +11,8 @@ anyone needs to read through.
 
 ## Procedure
 1. Get the task's diff — `sys_os_shell("gh pr diff <pr>")` (or
-   `git -C .worktrees/<task_id> diff main...HEAD`).
+   `git -C .worktrees/<task_id> diff $(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|origin/||' || echo main)...HEAD`,
+   which resolves the default branch rather than assuming `main`).
 2. Run the deterministic gates first — tests / lint / typecheck via
    `sys_os_shell`. If red, re-dispatch the implementer to drive it green first;
    don't involve the reviewer yet.

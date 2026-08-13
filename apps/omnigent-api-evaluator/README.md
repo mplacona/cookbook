@@ -142,6 +142,20 @@ A `blast_radius` guardrail denies the catastrophic set (force-push, `rm -rf /`, 
 remote ref), but nothing narrower. Run them in a scratch directory or a container, not in a repo
 you care about, and tighten `sandbox` if you adapt this for anything beyond a demo.
 
+**The Act 3 workers run with approvals bypassed.** This is inherited from Omnigent's shipped
+Polly example and it is worth knowing exactly what it means before you point this at a real repo:
+
+- `agents/implement/agents/codex/config.yaml` sets `yolo: true`, which becomes
+  `--dangerously-bypass-approvals-and-sandbox`. That worker executes tool calls without asking.
+- `agents/implement/agents/claude_code/config.yaml` sets `permission_mode: auto`, which removes
+  the interactive approval prompt for filesystem and shell tools.
+- Both also run `sandbox: type: none`, so there is no OS boundary underneath either.
+
+Together that is an agent writing and executing code in your working directory with no approval
+step. It is what makes an unattended demo run smoothly, and it is not what you want pointed at a
+repo you care about. Run Act 3 in a scratch repo. If you adapt this for real work, set
+`yolo: false`, drop `permission_mode: auto`, and give `os_env.sandbox` a real type.
+
 **The bundled evidence file has gaps, on purpose.** In `data/evidence_full.json`, some OpenCage
 fields come back with no citations and `cited: false`. That is a real research result, not a
 placeholder, and it is what the strike rule is for: Act 2 refuses to decide on those fields and
