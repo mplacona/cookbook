@@ -6,9 +6,10 @@ executor:
   type: omnigent
   config:
     harness: claude-native
-    # Headless workers can't answer ApprovalCards, and managed Claude
-    # settings disable ``bypassPermissions``. ``auto`` auto-approves without
-    # prompting and is allowed under managed settings (-> ``--permission-mode auto``).
+    # Approvals stay ON. Upstream's Polly example uses ``auto``, which
+    # auto-approves filesystem and shell tool calls without prompting.
+    # ``ask`` keeps the approval boundary; answer the prompts in the
+    # Omnigent UI. A fully headless run would need ``auto`` back.
     permission_mode: ask
 
 prompt: |

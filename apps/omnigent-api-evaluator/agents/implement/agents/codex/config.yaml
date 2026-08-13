@@ -6,9 +6,11 @@ executor:
   type: omnigent
   config:
     harness: codex-native
-    # YOLO: headless workers can't answer approval prompts, so run Codex
-    # with full bypass. The server translates this into
-    # ``--dangerously-bypass-approvals-and-sandbox`` (native sub-agents only).
+    # Approvals stay ON. Upstream's Polly example sets ``yolo: true`` so a
+    # headless worker never blocks, but that translates to
+    # ``--dangerously-bypass-approvals-and-sandbox`` — an agent executing
+    # tool calls unattended. Here the worker asks first; approve the prompts
+    # in the Omnigent UI as they appear.
     yolo: false
 
 prompt: |
