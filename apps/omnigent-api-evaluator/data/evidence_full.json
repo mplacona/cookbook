@@ -1,0 +1,781 @@
+{
+  "generated_effort": "high",
+  "schema_fields": [
+    "api_name",
+    "free_tier",
+    "price_beyond_free",
+    "rate_limit",
+    "storage_permitted",
+    "attribution_required",
+    "sdk_languages"
+  ],
+  "wall_clock_s": 328.0,
+  "candidates": [
+    {
+      "slug": "mapbox",
+      "name": "Mapbox Geocoding API",
+      "run_id": "task_run_41f7da53d0514736b30fffa17f21dabf",
+      "elapsed_s": 106.6,
+      "overall_confidence": "high",
+      "sources": [
+        {
+          "url": "https://docs.mapbox.com/api/search",
+          "type": "primary",
+          "title": "Search | API Docs | Mapbox"
+        },
+        {
+          "url": "https://docs.mapbox.com/api/search/geocoding",
+          "type": "primary",
+          "title": "Geocoding API | API Docs | Mapbox"
+        },
+        {
+          "url": "https://mapbox.com/pricing",
+          "type": "primary",
+          "title": "Mapbox pricing"
+        }
+      ],
+      "fields": {
+        "api_name": {
+          "value": "Mapbox Geocoding API",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://docs.mapbox.com/api/search/geocoding",
+              "title": "Geocoding API | API Docs | Mapbox"
+            }
+          ],
+          "cited": true
+        },
+        "free_tier": {
+          "value": "100,000 requests/month (Temporary Geocoding API)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://mapbox.com/pricing",
+              "title": "Mapbox pricing"
+            }
+          ],
+          "cited": true
+        },
+        "rate_limit": {
+          "value": "1,000 requests per minute per account (default; adjustable per account)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://docs.mapbox.com/api/search/geocoding",
+              "title": "Geocoding API | API Docs | Mapbox"
+            }
+          ],
+          "cited": true
+        },
+        "sdk_languages": {
+          "value": [
+            "iOS",
+            "Android",
+            "JavaScript"
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://docs.mapbox.com/api/search",
+              "title": "Search | API Docs | Mapbox"
+            },
+            {
+              "url": "https://docs.mapbox.com/api/search",
+              "title": "Search | API Docs | Mapbox"
+            },
+            {
+              "url": "https://docs.mapbox.com/api/search",
+              "title": "Search | API Docs | Mapbox"
+            }
+          ],
+          "cited": true
+        },
+        "price_beyond_free": {
+          "value": "$0.75 per 1,000 requests (Temporary Geocoding API, 100,001-500,000 monthly tier); volume discount to $0.60/1,000 (500,001-1,000,000) and $0.45/1,000 (1,000,001+); Permanent Geocoding API has no free tier at $5.00 per 1,000 (1-500,000) / $4.00 per 1,000 (500,001+)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://mapbox.com/pricing",
+              "title": "Mapbox pricing"
+            }
+          ],
+          "cited": true
+        },
+        "storage_permitted": {
+          "value": "Temporary results are not allowed to be cached, while Permanent results are allowed to be cached and stored indefinitely. Using Permanent storage with the Geocoding API requires that you have a valid credit card on file or an active enterprise contract. By default, the Geocoding API will use Temporary geocoding. To use Permanent geocoding, set the optional `permanent` parameter to `true`.",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://docs.mapbox.com/api/search/geocoding",
+              "title": "Geocoding API | API Docs | Mapbox"
+            }
+          ],
+          "cited": true
+        },
+        "attribution_required": {
+          "value": "Yes - each Geocoding API response includes the attribution string \"NOTICE: \u00a9 [year] Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained.\" Responses may only be used in conjunction with a Mapbox map, and maps using Mapbox data must display the Mapbox logo and text attribution.",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://docs.mapbox.com/api/search/geocoding",
+              "title": "Geocoding API | API Docs | Mapbox"
+            }
+          ],
+          "cited": true
+        }
+      }
+    },
+    {
+      "slug": "google",
+      "name": "Google Maps Geocoding API",
+      "run_id": "task_run_6501896d5d6c40a1a93cca82f0c75d15",
+      "elapsed_s": 64.6,
+      "overall_confidence": "high",
+      "sources": [
+        {
+          "url": "https://developers.google.com/maps/web-services/client-library",
+          "type": "primary",
+          "title": "Client Libraries for Google Maps Web Services | Google Maps Web ..."
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/geocoding/usage-and-billing",
+          "type": "primary",
+          "title": "Geocoding API Usage and Billing | Google for Developers"
+        },
+        {
+          "url": "https://developers.google.com/maps/billing-and-pricing/pricing",
+          "type": "primary",
+          "title": "Google Maps Platform core services pricing list | Pricing and Billing ..."
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/geocoding/policies",
+          "type": "primary",
+          "title": "Policies and attributions for Geocoding API | Google for Developers"
+        },
+        {
+          "url": "https://cloud.google.com/maps-platform/terms",
+          "type": "primary",
+          "title": "Google Maps Platform Terms Of Service | Google Cloud"
+        }
+      ],
+      "fields": {
+        "api_name": {
+          "value": "Google Maps Geocoding API",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://developers.google.com/maps/documentation/geocoding/usage-and-billing",
+              "title": "Geocoding API Usage and Billing | Google for Developers"
+            }
+          ],
+          "cited": true
+        },
+        "free_tier": {
+          "value": "10,000 Geocoding events per month",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://developers.google.com/maps/billing-and-pricing/pricing",
+              "title": "Google Maps Platform core services pricing list | Pricing and Billing ..."
+            }
+          ],
+          "cited": true
+        },
+        "rate_limit": {
+          "value": "25 queries per second (QPS) default quota; 3,000 queries per minute per project",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://developers.google.com/maps/documentation/geocoding/usage-and-billing",
+              "title": "Geocoding API Usage and Billing | Google for Developers"
+            },
+            {
+              "url": "https://developers.google.com/maps/documentation/geocoding/policies",
+              "title": "Policies and attributions for Geocoding API | Google for Developers"
+            }
+          ],
+          "cited": true
+        },
+        "sdk_languages": {
+          "value": [
+            "Java",
+            "Python",
+            "Go",
+            "Node.js"
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://developers.google.com/maps/web-services/client-library",
+              "title": "Client Libraries for Google Maps Web Services | Google Maps Web ..."
+            },
+            {
+              "url": "https://developers.google.com/maps/web-services/client-library",
+              "title": "Client Libraries for Google Maps Web Services | Google Maps Web ..."
+            },
+            {
+              "url": "https://developers.google.com/maps/web-services/client-library",
+              "title": "Client Libraries for Google Maps Web Services | Google Maps Web ..."
+            },
+            {
+              "url": "https://developers.google.com/maps/web-services/client-library",
+              "title": "Client Libraries for Google Maps Web Services | Google Maps Web ..."
+            }
+          ],
+          "cited": true
+        },
+        "price_beyond_free": {
+          "value": "$5.00 per 1,000 Geocoding events (0\u2013100,000 tier)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://developers.google.com/maps/billing-and-pricing/pricing",
+              "title": "Google Maps Platform core services pricing list | Pricing and Billing ..."
+            }
+          ],
+          "cited": true
+        },
+        "storage_permitted": {
+          "value": "Customer will not cache Google Maps Content except as expressly permitted under the Maps Service Specific Terms.",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://cloud.google.com/maps-platform/terms",
+              "title": "Google Maps Platform Terms Of Service | Google Cloud"
+            }
+          ],
+          "cited": true
+        },
+        "attribution_required": {
+          "value": "Required when displaying Geocoding API data without a Google Map: the Google Maps logo whenever possible, or the text \"Google Maps\" when space is limited. Not required if content is shown on a Google Map with attribution already visible.",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://developers.google.com/maps/documentation/geocoding/policies",
+              "title": "Policies and attributions for Geocoding API | Google for Developers"
+            }
+          ],
+          "cited": true
+        }
+      }
+    },
+    {
+      "slug": "opencage",
+      "name": "OpenCage Geocoding API",
+      "run_id": "task_run_bc14d5bbfd554d4fac0bb3b8de070ca8",
+      "elapsed_s": 75.0,
+      "overall_confidence": "high",
+      "sources": [
+        {
+          "url": "https://opencagedata.com/sdks",
+          "type": "primary",
+          "title": "OpenCage Geocoding API Software Libraries and SDKs"
+        },
+        {
+          "url": "https://opencagedata.com/api",
+          "type": "primary",
+          "title": "OpenCage Geocoding API Documentation"
+        },
+        {
+          "url": "https://opencagedata.com/pricing",
+          "type": "primary",
+          "title": "OpenCage Pricing - Geocoding API and Geosearch"
+        },
+        {
+          "url": "https://geocoder.opencagedata.com/faq",
+          "type": "secondary",
+          "title": "OpenCage - Frequently Asked Questions"
+        },
+        {
+          "url": "https://opencagedata.com/branding",
+          "type": "primary",
+          "title": "https://opencagedata.com/branding"
+        }
+      ],
+      "fields": {
+        "api_name": {
+          "value": "OpenCage Geocoding API",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ],
+          "cited": true
+        },
+        "free_tier": {
+          "value": "2,500 requests/day (free trial, for testing purposes)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/api",
+              "title": "OpenCage Geocoding API Documentation"
+            }
+          ],
+          "cited": true
+        },
+        "rate_limit": {
+          "value": "1 request/second for free trial accounts; 15\u201340 requests/second for paid subscriptions depending on tier",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/api",
+              "title": "OpenCage Geocoding API Documentation"
+            }
+          ],
+          "cited": true
+        },
+        "sdk_languages": {
+          "value": [
+            "Python",
+            "Node.js",
+            "Java",
+            "PHP",
+            "Ruby",
+            "Perl"
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            },
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            },
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            },
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            },
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            },
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ],
+          "cited": true
+        },
+        "price_beyond_free": {
+          "value": "Starting at $50/month for the X-Small subscription tier (10,000 requests/day, ~$0.17 per 1,000 requests); no per-request overage pricing \u2014 flat-rate subscriptions with soft limits",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/pricing",
+              "title": "OpenCage Pricing - Geocoding API and Geosearch"
+            }
+          ],
+          "cited": true
+        },
+        "storage_permitted": {
+          "value": "\"Feel free to cache, or store, results as long as you like, you know your use case and whether or not it makes sense. This applies whether you are on our free-trial, or you have become a paying customer, and even after you stop being a customer. Unlike many geocoding services we do not have different pricing tiers for \"temporary\" and \"permanent\" data storage. All data returns by the API can be stored permanently.\"",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        },
+        "attribution_required": {
+          "value": "No \u2014 OpenCage attribution is not required. (FAQ: \"There is no need to attribute us, it's not our data. Nevertheless if you find our service useful it would be absolutely ace if you told the world.\") Attribution to OpenStreetMap contributors is recommended in the form: \"Geodata copyright OpenStreetMap contributors\". A recommended (non-mandatory) citation is provided on the branding page: \"Geocoding services provided by OpenCage using data from OpenStreetMap contributors and others.\"",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        }
+      }
+    },
+    {
+      "slug": "here",
+      "name": "HERE Geocoding and Search API",
+      "run_id": "task_run_78d1ef54f1b04d8da6e5e4a486a7caba",
+      "elapsed_s": 328.0,
+      "overall_confidence": "high",
+      "sources": [
+        {
+          "url": "https://developer.here.com/documentation/geocoding-search-api/dev_guide/topics-api/code-autocomplete-language.html",
+          "type": "primary",
+          "title": "HERE Technologies Documentation | HERE Docs"
+        },
+        {
+          "url": "https://here.com/platform/here-sdk",
+          "type": "primary",
+          "title": "HERE SDK"
+        },
+        {
+          "url": "https://legal.here.com/en-gb/terms/here-platform",
+          "type": "primary",
+          "title": "https://legal.here.com/en-gb/terms/here-platform"
+        },
+        {
+          "url": "https://here.com/about/press-releases/2018-01-08",
+          "type": "primary",
+          "title": "HERE announces industry-leading freemium plan for developers to ..."
+        },
+        {
+          "url": "https://here.com/learn/blog/april-2025-platform-release-notes",
+          "type": "primary",
+          "title": "April 2025 Platform Release Notes"
+        },
+        {
+          "url": "https://here.com/learn/blog/how-to-get-started-with-here-platform",
+          "type": "primary",
+          "title": "How to Get Started with the HERE platform"
+        }
+      ],
+      "fields": {
+        "api_name": {
+          "value": "HERE Geocoding and Search API",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://legal.here.com/en-gb/terms/here-platform",
+              "title": "https://legal.here.com/en-gb/terms/here-platform"
+            }
+          ],
+          "cited": true
+        },
+        "free_tier": {
+          "value": "250,000 platform transactions/month (Freemium) for legacy sign-ups; current new sign-ups are routed to the Base Plan, which the vendor describes as including \"free monthly transactions\" once payment method is provided",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/about/press-releases/2018-01-08",
+              "title": "HERE announces industry-leading freemium plan for developers to ..."
+            },
+            {
+              "url": "https://here.com/learn/blog/april-2025-platform-release-notes",
+              "title": "April 2025 Platform Release Notes"
+            }
+          ],
+          "cited": true
+        },
+        "rate_limit": {
+          "value": "RPS (Requests Per Second) limits per app ID on the Limited Plan (no specific numeric RPS published in extracted pricing documentation)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/learn/blog/how-to-get-started-with-here-platform",
+              "title": "How to Get Started with the HERE platform"
+            }
+          ],
+          "cited": true
+        },
+        "sdk_languages": {
+          "value": [
+            "JavaScript",
+            "iOS",
+            "Android",
+            "Flutter"
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://developer.here.com/documentation/geocoding-search-api/dev_guide/topics-api/code-autocomplete-language.html",
+              "title": "HERE Technologies Documentation | HERE Docs"
+            },
+            {
+              "url": "https://here.com/platform/here-sdk",
+              "title": "HERE SDK"
+            },
+            {
+              "url": "https://here.com/platform/here-sdk",
+              "title": "HERE SDK"
+            },
+            {
+              "url": "https://here.com/platform/here-sdk",
+              "title": "HERE SDK"
+            }
+          ],
+          "cited": true
+        },
+        "price_beyond_free": {
+          "value": "$1 per additional 1,000 platform transactions above the included free monthly transactions (per the published Freemium pricing)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/about/press-releases/2018-01-08",
+              "title": "HERE announces industry-leading freemium plan for developers to ..."
+            }
+          ],
+          "cited": true
+        },
+        "storage_permitted": {
+          "value": "Conditional \u2014 caching outside the Platform is permitted only for up to 30 days for Results from HERE Content and Location Services (Geocoding & Search), and only up to 24 hours for Results related to HERE Content and Location Services for Japan (explicit carve-out for Geocoding and Search as described in context of those services); an additional carve-out allows caching beyond those limits solely for internal testing, evaluation, or record retention for audit and legal compliance purposes; caching must additionally respect the HTTP/1.1 caching headers returned by HERE Location Services.",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://legal.here.com/en-gb/terms/here-platform",
+              "title": "https://legal.here.com/en-gb/terms/here-platform"
+            }
+          ],
+          "cited": true
+        },
+        "attribution_required": {
+          "value": "Yes \u2014 visible attribution required. HERE Marks and copyright notices affixed to or included in HERE Materials or Results must not be removed or obfuscated, must be present in the HERE Materials and Result per HERE brand guidance (https://brandlive.here.com/), and the licensee must indicate that HERE is the owner of the HERE Marks; all goodwill from use of HERE Marks inures to HERE.",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://legal.here.com/en-gb/terms/here-platform",
+              "title": "https://legal.here.com/en-gb/terms/here-platform"
+            }
+          ],
+          "cited": true
+        }
+      }
+    },
+    {
+      "slug": "locationiq",
+      "name": "LocationIQ Geocoding API",
+      "run_id": "task_run_06d9d2a259d24b1aadf7a134ec8fb1e4",
+      "elapsed_s": 75.0,
+      "overall_confidence": "medium",
+      "sources": [
+        {
+          "url": "https://api-reference.locationiq.com/",
+          "type": "secondary",
+          "title": "API Reference: Introduction"
+        },
+        {
+          "url": "https://locationiq.com/geocoding",
+          "type": "primary",
+          "title": "Geocoding and Reverse Geocoding APIs - LocationIQ"
+        },
+        {
+          "url": "https://locationiq.com/pricing",
+          "type": "primary",
+          "title": "Pricing - LocationIQ"
+        },
+        {
+          "url": "https://locationiq.com/static/tos.html",
+          "type": "primary",
+          "title": "Terms of Use"
+        }
+      ],
+      "fields": {
+        "api_name": {
+          "value": "LocationIQ Geocoding API",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://locationiq.com/geocoding",
+              "title": "Geocoding and Reverse Geocoding APIs - LocationIQ"
+            }
+          ],
+          "cited": true
+        },
+        "free_tier": {
+          "value": "5000 requests /day",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://locationiq.com/pricing",
+              "title": "Pricing - LocationIQ"
+            }
+          ],
+          "cited": true
+        },
+        "rate_limit": {
+          "value": "2 requests /second (60 requests per minute sub-limit)",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        },
+        "sdk_languages": {
+          "value": [
+            "Shell",
+            "Node",
+            "Ruby",
+            "PHP",
+            "Python"
+          ],
+          "confidence": "medium",
+          "citations": [
+            {
+              "url": "https://api-reference.locationiq.com/",
+              "title": "API Reference: Introduction"
+            },
+            {
+              "url": "https://api-reference.locationiq.com/",
+              "title": "API Reference: Introduction"
+            },
+            {
+              "url": "https://api-reference.locationiq.com/",
+              "title": "API Reference: Introduction"
+            },
+            {
+              "url": "https://api-reference.locationiq.com/",
+              "title": "API Reference: Introduction"
+            },
+            {
+              "url": "https://api-reference.locationiq.com/",
+              "title": "API Reference: Introduction"
+            }
+          ],
+          "cited": true
+        },
+        "price_beyond_free": {
+          "value": "Developer plan: $100/month for 25,000 requests/day",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://locationiq.com/pricing",
+              "title": "Pricing - LocationIQ"
+            }
+          ],
+          "cited": true
+        },
+        "storage_permitted": {
+          "value": "Yes - \"collect any request-response pairs from the Service other than for temporary caching, without the express written permission of Unwired Labs. If you have a free account, you can cache request-response pairs from the Service for upto 48 hours. If you are a customer, you can cache request-response pairs for as long as you're a customer. You can store response data forever. We do not allow server-side caching of Map Tiles.\"",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://locationiq.com/static/tos.html",
+              "title": "Terms of Use"
+            }
+          ],
+          "cited": true
+        },
+        "attribution_required": {
+          "value": "Visible attribution required for free plan commercial use: link back to locationiq.com in form <a href='https://locationiq.com'>Search by LocationIQ.com</a>",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://locationiq.com/pricing",
+              "title": "Pricing - LocationIQ"
+            }
+          ],
+          "cited": true
+        }
+      }
+    },
+    {
+      "slug": "geoapify",
+      "name": "Geoapify Geocoding API",
+      "run_id": "task_run_8642c8ac6b9040aab5089c0fb32d5301",
+      "elapsed_s": 75.1,
+      "overall_confidence": "high",
+      "sources": [
+        {
+          "url": "https://geoapify.com/downloads",
+          "type": "primary",
+          "title": "Downloads: Datasets, SDKs, and Libraries"
+        },
+        {
+          "url": "https://geoapify.com/pricing",
+          "type": "primary",
+          "title": "Pricing | Geoapify Location Platform"
+        },
+        {
+          "url": "https://geoapify.com/pricing-details",
+          "type": "primary",
+          "title": "Pricing Details | Geoapify Location Platform"
+        },
+        {
+          "url": "https://geoapify.com/",
+          "type": "primary",
+          "title": "Geoapify Location Platform: Maps, Geocoding, Routing, and APIs"
+        },
+        {
+          "url": "https://geoapify.com/terms-and-conditions",
+          "type": "primary",
+          "title": "Terms and Conditions | Geoapify Location Platform"
+        }
+      ],
+      "fields": {
+        "api_name": {
+          "value": "Geoapify Geocoding API",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://geoapify.com/pricing",
+              "title": "Pricing | Geoapify Location Platform"
+            }
+          ],
+          "cited": true
+        },
+        "free_tier": {
+          "value": "3,000 credits/day (~90,000 credits/month); 1 Geocoding API request = 1 credit",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://geoapify.com/pricing-details",
+              "title": "Pricing Details | Geoapify Location Platform"
+            },
+            {
+              "url": "https://geoapify.com/pricing",
+              "title": "Pricing | Geoapify Location Platform"
+            }
+          ],
+          "cited": true
+        },
+        "rate_limit": {
+          "value": "Up to 5 requests/second on the Free plan",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://geoapify.com/pricing",
+              "title": "Pricing | Geoapify Location Platform"
+            }
+          ],
+          "cited": true
+        },
+        "sdk_languages": {
+          "value": [
+            "JavaScript"
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://geoapify.com/downloads",
+              "title": "Downloads: Datasets, SDKs, and Libraries"
+            }
+          ],
+          "cited": true
+        },
+        "price_beyond_free": {
+          "value": "From $59 USD/month (API 10 plan: 10,000 credits/day); 1 credit = 1 Geocoding API request",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://geoapify.com/pricing",
+              "title": "Pricing | Geoapify Location Platform"
+            }
+          ],
+          "cited": true
+        },
+        "storage_permitted": {
+          "value": "\"Yes. Geoapify provides business-friendly terms that allow caching and storing results, and in many cases redistribution according to our terms.\" (\u00a7 \"Can I store the data I received by using Maps API?\": \"You are free to download and store all the data and components you create with Geoapify. But please remember the required OpenStreetMap attribution. By default, the attribution is provided as a part of the result object. If you are on a Free plan, please also add a 'follow' link on your website to attribute Geoapify as data provider: `Powered by <a href=\"https://www.geoapify.com/\">Geoapify</a>`\")",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://geoapify.com/",
+              "title": "Geoapify Location Platform: Maps, Geocoding, Routing, and APIs"
+            }
+          ],
+          "cited": true
+        },
+        "attribution_required": {
+          "value": "Per Terms \u00a7 Attribution (verbatim): \"When using the Services, you must always provide OpenStreetMap attribution (https://www.openstreetmap.org/copyright). Geoapify attribution is mandatory when using Free subscription plan. Different APIs may require additional attribution, which you must comply with as specified in their respective documentation. You agree to provide attribution when required.\" On the Free plan, the site specifies the form: `Powered by <a href=\"https://www.geoapify.com/\">Geoapify</a>` as a \"follow\" link.",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://geoapify.com/terms-and-conditions",
+              "title": "Terms and Conditions | Geoapify Location Platform"
+            },
+            {
+              "url": "https://geoapify.com/",
+              "title": "Geoapify Location Platform: Maps, Geocoding, Routing, and APIs"
+            }
+          ],
+          "cited": true
+        }
+      }
+    }
+  ]
+}

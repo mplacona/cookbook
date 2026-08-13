@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__omnigent__sys_session_send",
+      "mcp__omnigent__sys_read_inbox",
+      "mcp__omnigent__sys_session_get_history",
+      "mcp__omnigent__sys_cancel_task",
+      "Read", "Write", "Edit", "Bash"
+    ],
+    "deny": [
+      "mcp__plugin_nimble_nimble__nimble_agents_run",
+      "mcp__plugin_nimble_nimble__nimble_agents_create",
+      "mcp__plugin_nimble_nimble__nimble_agents_run_result",
+      "mcp__plugin_nimble_nimble__nimble_agents_run_status",
+      "mcp__plugin_nimble_nimble__nimble_search",
+      "mcp__plugin_nimble_nimble__nimble_extract"
+    ]
+  }
+}

@@ -1,0 +1,531 @@
+{
+  "generated_effort": "high",
+  "candidates": [
+    {
+      "slug": "opencage-geocoding-api",
+      "name": "OpenCage Geocoding API",
+      "run_id": "task_run_3b00ee957c194d8eb74626cd68796ff3",
+      "web_search_agent_id": "wsa_cc836ba0fd8e45388da33685f3a93f59",
+      "overall_confidence": "high",
+      "sources": [
+        {
+          "url": "https://opencagedata.com/sdks",
+          "type": "primary",
+          "title": "OpenCage Geocoding API Software Libraries and SDKs"
+        },
+        {
+          "url": "https://opencagedata.com/",
+          "type": "primary",
+          "title": "OpenCage Geocoding API"
+        },
+        {
+          "url": "https://opencagedata.com/api",
+          "type": "primary",
+          "title": "OpenCage Geocoding API Documentation"
+        },
+        {
+          "url": "https://geocoder.opencagedata.com/pricing",
+          "type": "secondary",
+          "title": "OpenCage Pricing - Geocoding API and Geosearch"
+        },
+        {
+          "url": "https://opencagedata.com/faq",
+          "type": "primary",
+          "title": "OpenCage - Frequently Asked Questions"
+        }
+      ],
+      "claims": [
+        {
+          "path": "$.sdk_languages[0]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[1]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[2]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[3]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[4]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[5]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[6]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[7]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[8]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[9]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ]
+        }
+      ],
+      "claims_omitted": 46,
+      "fields": {
+        "api_name": {
+          "value": "OpenCage Geocoding API",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        },
+        "free_tier": {
+          "value": "2,500 requests per day (UTC day, resets at 24:00 UTC); free trial tier; free while testing; no credit card required; testing only; rate limit 1 request/second on free trial",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        },
+        "price_beyond_free": {
+          "value": "From $50/mo (USD, VAT inclusive): X-Small $50/mo (~$0.17 per 1,000), Small $125/mo (~$0.14 per 1,000), Medium $500/mo (~$0.13 per 1,000), Large $1000/mo (~$0.11 per 1,000), Enterprise from $2000/mo",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        },
+        "rate_limit": {
+          "value": "1 request per second (free trial hard limit); 15 req/s X-Small, 20 req/s Small, 25 req/s Medium, 40 req/s Large on paid subscriptions",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        },
+        "storage_permitted": {
+          "value": "\"Feel free to cache, or store, results as long as you like, you know your use case and whether or not it makes sense. This applies whether you are on our free-trial, or you have become a paying customer, and even after you stop being a customer. Unlike many geocoding services we do not have different pricing tiers for \"temporary\" and \"permanent\" data storage. All data returns by the API can be stored permanently.\"",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        },
+        "attribution_required": {
+          "value": "No visible attribution to OpenCage required (\"There is no need to attribute us, it's not our data.\"). Only OpenStreetMap attribution is required: \"On your about page or similar page where it can easily be found add `\\\"Geodata copyright <a href=\\\"https://www.openstreetmap.org\\\">OpenStreetMap</a> contributors\\\"`.\"",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        },
+        "sdk_languages": {
+          "value": [
+            "Python",
+            "Node.js",
+            "Java",
+            "PHP",
+            "Ruby",
+            "Perl",
+            "AngularJS",
+            "AWS Lambda",
+            "bash",
+            "C",
+            "C++",
+            "Clojure",
+            "Cloudflare Workers",
+            "ColdFusion (CFML)",
+            "Command Line Interface (CLI)",
+            "Dart",
+            "Datasette",
+            "Elixir",
+            "Erlang",
+            "GatsbyJS",
+            "Go",
+            "Google Apps Script",
+            "Haskell",
+            "iOS / Swift",
+            "Julia",
+            "Kotlin / Android",
+            "Leaflet Maps",
+            "Lua",
+            "MATLAB",
+            "MCP",
+            ".NET",
+            "Neo4j",
+            "OCaml",
+            "OpenLayers",
+            "PostgreSQL",
+            "PowerShell",
+            "QGIS",
+            "R",
+            "Racket",
+            "Raku",
+            "ReactJS",
+            "React Native",
+            "Rust",
+            "Scala",
+            "SQLite",
+            "Stata",
+            "Svelte",
+            "Typescript",
+            "Vue",
+            "Zig"
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://opencagedata.com/sdks",
+              "title": "OpenCage Geocoding API Software Libraries and SDKs"
+            }
+          ],
+          "cited": true
+        }
+      }
+    },
+    {
+      "slug": "here-geocoding-and-search-api",
+      "name": "HERE Geocoding and Search API",
+      "run_id": "task_run_bc15631882954e52b0529ad3a2c90f69",
+      "web_search_agent_id": "wsa_9a863cc7878e4132a43e903a7b9e24bd",
+      "overall_confidence": "high",
+      "sources": [
+        {
+          "url": "https://developer.here.com/products/geocoding-and-search",
+          "type": "primary",
+          "title": "HERE Developer Portal | DevDocs | Location Data | HERE"
+        },
+        {
+          "url": "https://developer.here.com/pricing",
+          "type": "primary",
+          "title": "Pricing and Plans | HERE Developer"
+        },
+        {
+          "url": "https://docs.here.com/here-sdk/docs",
+          "type": "primary",
+          "title": "https://docs.here.com/here-sdk/docs"
+        },
+        {
+          "url": "https://here.com/en-gb/terms/here-platform-terms-september-2023",
+          "type": "primary",
+          "title": "HERE Technologies | The world's #1 location platform"
+        },
+        {
+          "url": "https://here.com/learn/blog/how-to-get-started-with-here-platform",
+          "type": "primary",
+          "title": "How to Get Started with the HERE platform"
+        },
+        {
+          "url": "https://here.com/get-started/pricing/rps-limits-excluded-use-cases",
+          "type": "primary",
+          "title": "HERE Pricing Plans | RPS Limits and Excluded Use Cases | Pricing ..."
+        },
+        {
+          "url": "https://here.com/get-started/pricing/limited-plan-restrictions",
+          "type": "primary",
+          "title": "HERE Pricing Plans | Limited Plan Usage Restrictions | Pricing ..."
+        },
+        {
+          "url": "https://here.com/get-started/pricing",
+          "type": "primary",
+          "title": "HERE Base Plan | Location Services | Pricing | HERE"
+        },
+        {
+          "url": "https://developer.here.com/terms-and-conditions",
+          "type": "primary",
+          "title": "Terms and Conditions - HERE Developer"
+        }
+      ],
+      "claims": [
+        {
+          "path": "$.sdk_languages[0]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://developer.here.com/products/geocoding-and-search",
+              "title": "HERE Developer Portal | DevDocs | Location Data | HERE"
+            },
+            {
+              "url": "https://developer.here.com/pricing",
+              "title": "Pricing and Plans | HERE Developer"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[1]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://docs.here.com/here-sdk/docs",
+              "title": "https://docs.here.com/here-sdk/docs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[2]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://docs.here.com/here-sdk/docs",
+              "title": "https://docs.here.com/here-sdk/docs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[3]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://docs.here.com/here-sdk/docs",
+              "title": "https://docs.here.com/here-sdk/docs"
+            }
+          ]
+        },
+        {
+          "path": "$.sdk_languages[4]",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://docs.here.com/here-sdk/docs",
+              "title": "https://docs.here.com/here-sdk/docs"
+            },
+            {
+              "url": "https://here.com/en-gb/terms/here-platform-terms-september-2023",
+              "title": "HERE Technologies | The world's #1 location platform"
+            }
+          ]
+        },
+        {
+          "path": "$.api_name",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/en-gb/terms/here-platform-terms-september-2023",
+              "title": "HERE Technologies | The world's #1 location platform"
+            }
+          ]
+        },
+        {
+          "path": "$.free_tier",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/learn/blog/how-to-get-started-with-here-platform",
+              "title": "How to Get Started with the HERE platform"
+            },
+            {
+              "url": "https://here.com/get-started/pricing/rps-limits-excluded-use-cases",
+              "title": "HERE Pricing Plans | RPS Limits and Excluded Use Cases | Pricing ..."
+            }
+          ]
+        },
+        {
+          "path": "$.rate_limit",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/get-started/pricing/rps-limits-excluded-use-cases",
+              "title": "HERE Pricing Plans | RPS Limits and Excluded Use Cases | Pricing ..."
+            },
+            {
+              "url": "https://here.com/get-started/pricing/limited-plan-restrictions",
+              "title": "HERE Pricing Plans | Limited Plan Usage Restrictions | Pricing ..."
+            }
+          ]
+        },
+        {
+          "path": "$.price_beyond_free",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/learn/blog/how-to-get-started-with-here-platform",
+              "title": "How to Get Started with the HERE platform"
+            },
+            {
+              "url": "https://here.com/get-started/pricing",
+              "title": "HERE Base Plan | Location Services | Pricing | HERE"
+            },
+            {
+              "url": "https://developer.here.com/pricing",
+              "title": "Pricing and Plans | HERE Developer"
+            }
+          ]
+        },
+        {
+          "path": "$.storage_permitted",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/en-gb/terms/here-platform-terms-september-2023",
+              "title": "HERE Technologies | The world's #1 location platform"
+            }
+          ]
+        }
+      ],
+      "claims_omitted": 1,
+      "fields": {
+        "api_name": {
+          "value": "HERE Geocoding & Search API (v7)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/en-gb/terms/here-platform-terms-september-2023",
+              "title": "HERE Technologies | The world's #1 location platform"
+            }
+          ],
+          "cited": true
+        },
+        "free_tier": {
+          "value": "1,000 free requests per day (HERE Limited Plan); HERE Location Services shared quota across APIs",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/learn/blog/how-to-get-started-with-here-platform",
+              "title": "How to Get Started with the HERE platform"
+            },
+            {
+              "url": "https://here.com/get-started/pricing/rps-limits-excluded-use-cases",
+              "title": "HERE Pricing Plans | RPS Limits and Excluded Use Cases | Pricing ..."
+            }
+          ],
+          "cited": true
+        },
+        "price_beyond_free": {
+          "value": "Pay-as-you-grow Transaction pricing under the HERE Base Plan (specific per-1,000-transaction rate not exposed on documented public pricing page)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/learn/blog/how-to-get-started-with-here-platform",
+              "title": "How to Get Started with the HERE platform"
+            },
+            {
+              "url": "https://here.com/get-started/pricing",
+              "title": "HERE Base Plan | Location Services | Pricing | HERE"
+            },
+            {
+              "url": "https://developer.here.com/pricing",
+              "title": "Pricing and Plans | HERE Developer"
+            }
+          ],
+          "cited": true
+        },
+        "rate_limit": {
+          "value": "5 requests per second per endpoint (Limited Plan; applies to Geocode & Reverse Geocode, Discover/Search, Autocomplete, Autosuggest)",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/get-started/pricing/rps-limits-excluded-use-cases",
+              "title": "HERE Pricing Plans | RPS Limits and Excluded Use Cases | Pricing ..."
+            },
+            {
+              "url": "https://here.com/get-started/pricing/limited-plan-restrictions",
+              "title": "HERE Pricing Plans | Limited Plan Usage Restrictions | Pricing ..."
+            }
+          ],
+          "cited": true
+        },
+        "storage_permitted": {
+          "value": "From the HERE Platform Terms (Sept 18 2023), Section 6.4(j): \"Cache or store outside of the Platform any Results that include anything from the use of HERE Content or Location Services for more than 30 days, except HERE Positioning services which cannot be cached or stored outside the Platform for more than 24 hours, unless Results are used solely for your internal testing, evaluation, or record retention for audit and legal compliance purposes\"; Section 6.4(k): \"Cache or store any Results from HERE Content and Location Services for Japan (with the exception of Geocoding and Search as described in context of these services) for more than 24 hours, unless Results are generated using an Asset Subscription Plan or a Monthly Active User (MAU) HERE Navigate SDK Subscription Plan and are stored on a smartphone (or tablet that is diverting smartphone services), in which case Results can be cached or stored for a maximum of 30 days\"; Exhibit 2 Section 1.3: \"In addition to the caching restrictions in the Platform Terms, you may not use HERE Materials in a manner that pre-fetches, caches, or stores data or Results, except as explicitly allowed by the caching headers (HTTP/1.1 standard) returned by HERE Location Services.\"",
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://here.com/en-gb/terms/here-platform-terms-september-2023",
+              "title": "HERE Technologies | The world's #1 location platform"
+            }
+          ],
+          "cited": true
+        },
+        "attribution_required": {
+          "value": "Yes. From HERE Platform Terms Section 13.1: \"You may not remove or obfuscate any HERE Marks or copyright notices affixed to or included in HERE Materials or Results. You will ensure that all HERE Marks and copyright notices are present in the HERE Materials and Result in accordance with HERE brand guidance (https://brandlive.here.com/). You must indicate that HERE is the owner of HERE Marks. All goodwill from the use of HERE Marks inures to HERE.\" Additional restriction in Section 6.4(m): you may not \"Use incorrect attribution of any information derived from the Platform.\" Per developer terms-and-conditions: \"In all instances where HERE Materials are used or where your marketing materials reference HERE Materials (collectively 'Collateral') you must attribute HERE as the creator and source of origin of the HERE Materials and you shall not in any way imply that you or any third party is the creator or source of origin.\"",
+          "confidence": null,
+          "citations": [],
+          "cited": false
+        },
+        "sdk_languages": {
+          "value": [
+            "JavaScript",
+            "Android (Java/Kotlin)",
+            "iOS (Swift)",
+            "Flutter (Dart)",
+            "Java"
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "url": "https://developer.here.com/products/geocoding-and-search",
+              "title": "HERE Developer Portal | DevDocs | Location Data | HERE"
+            },
+            {
+              "url": "https://developer.here.com/pricing",
+              "title": "Pricing and Plans | HERE Developer"
+            },
+            {
+              "url": "https://docs.here.com/here-sdk/docs",
+              "title": "https://docs.here.com/here-sdk/docs"
+            },
+            {
+              "url": "https://here.com/en-gb/terms/here-platform-terms-september-2023",
+              "title": "HERE Technologies | The world's #1 location platform"
+            }
+          ],
+          "cited": true
+        }
+      }
+    }
+  ]
+}
