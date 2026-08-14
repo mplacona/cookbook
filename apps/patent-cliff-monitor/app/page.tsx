@@ -3,7 +3,7 @@
 import type { NextPage } from 'next';
 import React, { useState, useRef } from 'react';
 import { DEFAULT_BRIEF } from '@/lib/brief';
-import { ReportMarkdown } from './report';
+import { ReportMarkdown, safeExternalHref } from './report';
 
 const DEFAULT_DRUG_INPUT = DEFAULT_BRIEF;
 
@@ -297,14 +297,23 @@ const Home: NextPage = () => {
               {trust && trust.sources.length > 0 && (
                 <div className="sources">
                   <h2 className="sources-title">Sources</h2>
-                  {trust.sources.map((s: any, i: number) => (
-                    <div className="source" key={i}>
-                      <span className="chip">{s.type}</span>
-                      <a href={s.url} target="_blank" rel="noopener noreferrer">
-                        {s.title ?? s.url}
-                      </a>
-                    </div>
-                  ))}
+                  {trust.sources.map((s: any, i: number) => {
+                    // Nimble sources come from the open web. Anything that is
+                    // not http(s) is shown as plain text, never as a link.
+                    const href = safeExternalHref(s.url);
+                    return (
+                      <div className="source" key={i}>
+                        <span className="chip">{s.type}</span>
+                        {href ? (
+                          <a href={href} target="_blank" rel="noopener noreferrer">
+                            {s.title ?? s.url}
+                          </a>
+                        ) : (
+                          <span className="source-unlinked">{s.title ?? s.url}</span>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>

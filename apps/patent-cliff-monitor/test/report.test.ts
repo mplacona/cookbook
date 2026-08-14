@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { linkCitations, type Trust } from '../app/report';
+import { linkCitations, safeExternalHref, type Trust } from '../app/report';
 
 const trust: Trust = {
   claims: [
@@ -38,4 +38,42 @@ test('returns the report untouched when the run carried no trust metadata', () =
 
   assert.equal(linkCitations(report, undefined), report);
   assert.equal(linkCitations(report, { claims: [] }), report);
+});
+
+test('accepts only http and https URLs as clickable links', () => {
+  assert.equal(safeExternalHref('https://fda.gov/x'), 'https://fda.gov/x');
+  assert.equal(safeExternalHref('http://fda.gov/x'), 'http://fda.gov/x');
+
+  for (const hostile of [
+    'javascript:alert(document.cookie)',
+    'JavaScript:alert(1)',
+    'data:text/html;base64,PHNjcmlwdD4=',
+    'file:///etc/passwd',
+    'vbscript:msgbox(1)',
+    'not a url at all',
+    '',
+    null,
+    undefined,
+  ]) {
+    assert.equal(safeExternalHref(hostile as string), undefined, `should reject ${hostile}`);
+  }
+});
+
+test('never turns a hostile citation URL into a link', () => {
+  const hostileTrust: Trust = {
+    claims: [{ callout: 1, citations: [{ url: 'javascript:alert(1)' }] }],
+  };
+
+  assert.equal(linkCitations('a claim [1]', hostileTrust), 'a claim [1]');
+});
+
+test('encodes parentheses so a URL cannot truncate its own markdown link', () => {
+  const parenTrust: Trust = {
+    claims: [{ callout: 1, citations: [{ url: 'https://en.wikipedia.org/wiki/Drug_(x)' }] }],
+  };
+
+  const linked = linkCitations('see [1]', parenTrust);
+
+  assert.equal(linked, 'see [[1]](https://en.wikipedia.org/wiki/Drug_%28x%29)');
+  assert.ok(!/\)\)/.test(linked));
 });

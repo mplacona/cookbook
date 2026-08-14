@@ -560,6 +560,12 @@ body {
   color: var(--accent-hover);
 }
 
+/* A source whose URL was not a usable http(s) link. Shown, but not clickable. */
+.source-unlinked {
+  color: var(--text-dim);
+  overflow-wrap: anywhere;
+}
+
 /* ─── Report prose (markdown from Nimble) ───────────────────────────────── */
 
 .prose {

@@ -51,6 +51,18 @@ const PROVIDERS = {
 
 type ProviderName = keyof typeof PROVIDERS;
 
+/**
+ * A local misconfiguration, as opposed to an upstream failure. Carried as a
+ * type rather than a message prefix so the API route can classify it without
+ * pattern-matching on prose that anyone might later reword.
+ */
+export class ConfigurationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'ConfigurationError';
+  }
+}
+
 const PROVIDER_ORDER: ProviderName[] = ['openrouter', 'gateway', 'openai'];
 
 const PLACEHOLDER_KEYS = new Set([
@@ -69,7 +81,7 @@ function configuredProvider(): ProviderName | undefined {
 
   if (requested) {
     if (!(requested in PROVIDERS)) {
-      throw new Error(
+      throw new ConfigurationError(
         `Unknown RESEARCH_PROVIDER "${requested}". Use one of: ${Object.keys(PROVIDERS).join(', ')}.`
       );
     }
@@ -94,7 +106,7 @@ function missingProviderMessage() {
 /** The model and its cost-trimming options, for whichever provider is configured. */
 function researchModel() {
   const name = configuredProvider();
-  if (!name) throw new Error(missingProviderMessage());
+  if (!name) throw new ConfigurationError(missingProviderMessage());
 
   const provider = PROVIDERS[name];
   return {
@@ -113,14 +125,16 @@ function requireConfiguration(requirement: ConfigRequirement = 'nimble') {
 
   for (const [name, value, placeholder] of required) {
     if (!value || value === placeholder) {
-      throw new Error(`Missing ${name}. Add it to .env.local (or .env) before starting research.`);
+      throw new ConfigurationError(
+        `Missing ${name}. Add it to .env.local (or .env) before starting research.`
+      );
     }
   }
 
   // Only starting a run goes through the model. Reading a run back does not,
   // so a missing model-provider key must not block someone resuming a report.
   if (requirement === 'nimble+model' && !configuredProvider()) {
-    throw new Error(missingProviderMessage());
+    throw new ConfigurationError(missingProviderMessage());
   }
 }
 
@@ -130,9 +144,12 @@ function toolOutput<T>(steps: Array<{ toolResults: Array<{ toolName: string; out
   return output as T;
 }
 
+/**
+ * Surface a local misconfiguration verbatim, because the reader can act on it.
+ * Anything else is an upstream failure and gets the caller's generic message.
+ */
 export function researchErrorMessage(error: unknown, fallback: string) {
-  if (error instanceof Error && error.message.startsWith('Missing ')) return error.message;
-  return fallback;
+  return error instanceof ConfigurationError ? error.message : fallback;
 }
 
 /**

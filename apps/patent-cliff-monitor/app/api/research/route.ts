@@ -9,22 +9,34 @@
  * Environment:
  *   NIMBLE_API_KEY      — from online.nimbleway.com
  *   NIMBLE_AGENT_ID     — pre-created Web Search Agent from Nimble console
- *   OPENAI_API_KEY      — used once per report, to start the run via the connector
- *   OPENAI_MODEL        — optional, defaults to gpt-5-nano
+ *   RESEARCH_PROVIDER   — openrouter | openai | gateway
+ *   RESEARCH_MODEL      — model id for that provider, must support tool calling
+ *   <PROVIDER>_API_KEY  — spent once per report, to start the run via the connector
  */
 import { NextResponse } from 'next/server';
-import { researchErrorMessage, startPatentCliffPhase, resumePatentCliffPhase } from '@/lib/agent';
+import {
+  ConfigurationError,
+  researchErrorMessage,
+  startPatentCliffPhase,
+  resumePatentCliffPhase,
+} from '@/lib/agent';
 
 export const maxDuration = 60;
 export const runtime = 'nodejs';
 
 /**
- * A missing environment variable is a local misconfiguration, not a failure
- * upstream at Nimble. Returning 502 for it makes a config problem look like an
- * outage.
+ * The brief is concatenated into the model prompt, so an unbounded one can blow
+ * the context window or run up tokens before the Nimble run even starts. This
+ * is a generous ceiling for a drug list, not a tuning knob.
  */
-function errorStatus(message: string) {
-  return message.startsWith('Missing ') ? 500 : 502;
+const MAX_TASK_CHARS = 20_000;
+
+/**
+ * A local misconfiguration is not a failure upstream at Nimble. Returning 502
+ * for it makes a config problem look like an outage.
+ */
+function errorStatus(error: unknown) {
+  return error instanceof ConfigurationError ? 500 : 502;
 }
 
 export async function POST(req: Request) {
@@ -47,7 +59,7 @@ export async function POST(req: Request) {
     } catch (error) {
       console.error('Failed to resume Nimble research run', error);
       const message = researchErrorMessage(error, 'Unable to retrieve this research run.');
-      return NextResponse.json({ error: message }, { status: errorStatus(message) });
+      return NextResponse.json({ error: message }, { status: errorStatus(error) });
     }
   }
 
@@ -58,12 +70,22 @@ export async function POST(req: Request) {
     );
   }
 
+  const trimmedTask = task.trim();
+  if (trimmedTask.length > MAX_TASK_CHARS) {
+    return NextResponse.json(
+      {
+        error: `The research brief is ${trimmedTask.length} characters. Keep it under ${MAX_TASK_CHARS}.`,
+      },
+      { status: 400 }
+    );
+  }
+
   try {
-    const { text, runId: newRunId, effort, status } = await startPatentCliffPhase(task.trim());
+    const { text, runId: newRunId, effort, status } = await startPatentCliffPhase(trimmedTask);
     return NextResponse.json({ text, runId: newRunId, effort, status });
   } catch (error) {
     console.error('Failed to start Nimble research run', error);
     const message = researchErrorMessage(error, 'Unable to start research. Check the Nimble configuration and try again.');
-    return NextResponse.json({ error: message }, { status: errorStatus(message) });
+    return NextResponse.json({ error: message }, { status: errorStatus(error) });
   }
 }
